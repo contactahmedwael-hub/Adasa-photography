@@ -1,16 +1,49 @@
-# React + Vite
+# عدسة (Adasa) — Photography Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React + Vite single-page app that recreates [adasa-psi.vercel.app](https://adasa-psi.vercel.app/), an Arabic (RTL) blog about photography. Built as a routing-focused assignment: no backend, no API calls — all content comes from a static `posts.json` file, treated exactly like a response from a server.
 
-Currently, two official plugins are available:
+## Live Demo: adasa-photography-five.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Home** — hero, category strip, featured articles, "explore by topic" cards, a latest-posts carousel, and a newsletter signup
+- **Blog** — full-text search, category filtering (chip buttons), grid/list view toggle, and pagination (6 posts per page) — all synced to the URL query string
+- **Blog Details** — full article view with author info, tags, and related posts
+- **About** ("من نحن") — mission, values, and the full writer team (pulled from the post authors already in the data)
+- **404** — shown for any unmatched route
+- Fully responsive, including a collapsible mobile navbar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the Oxlint configuration
+- React 18 + Vite
+- React Router v6 (client-side routing, `useSearchParams` for Blog page state)
+- Bootstrap 5 (RTL build) for layout/grid
+- Bootstrap Icons
+- Plain CSS (`index.css`) for the dark/orange theme on top of Bootstrap
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Project Structure
+
+```
+src/
+├── components/     # Navbar, Footer, Layout, PostCard, Pagination, Logo
+├── pages/          # Home, Blog, BlogDetails, About, NotFound
+├── data/
+│   ├── posts.json     # source data — posts, categories, site info
+│   └── postsData.js   # helpers (lookup by slug, related posts, category colors/icons, team list)
+├── index.css       # theme tokens + all custom styles
+├── App.jsx         # route definitions
+└── main.jsx        # entry point
+```
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Then open the printed local URL in your browser.
+
+## Data
+
+Everything renders from `src/data/posts.json` — posts, categories, and site info. There are no API calls anywhere in the app.
