@@ -2,7 +2,8 @@
 
 Arabic (RTL) blog about photography. Built as a routing-focused assignment: no backend, no API calls — all content comes from a static `posts.json` file, treated exactly like a response from a server.
 
-## Live Demo: adasa-photography-five.vercel.app
+## Live Demo:
+ [adasa-photography-five.vercel.app](https://adasa-photography-five.vercel.app/)
 
 ## Features
 
