@@ -1,6 +1,6 @@
 # عدسة (Adasa) — Photography Blog
 
-A React + Vite single-page app that recreates [adasa-psi.vercel.app](https://adasa-psi.vercel.app/), an Arabic (RTL) blog about photography. Built as a routing-focused assignment: no backend, no API calls — all content comes from a static `posts.json` file, treated exactly like a response from a server.
+Arabic (RTL) blog about photography. Built as a routing-focused assignment: no backend, no API calls — all content comes from a static `posts.json` file, treated exactly like a response from a server.
 
 ## Live Demo: adasa-photography-five.vercel.app
 
